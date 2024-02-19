@@ -10,14 +10,16 @@ This project focuses on stereo vision using computer vision techniques to estima
 - The project was tested using datasets from https://vision.middlebury.edu/stereo/data/scenes2014/. The datasets were ommited from the git repository, however one that can be used for testing was left in the project's directory.
 - The project assumes that the images are rectified as this was the case for the datasets given at https://vision.middlebury.edu/stereo/data/scenes2014/
 - **StereoSGBM Algorithm:** The StereoSGBM algorithm was chosen for stereo matching due to its robustness and efficiency in handling various types of stereo images, including those with textureless regions or occlusions.
-- **Parameter Selection:** The parameters of the StereoSGBM algorithm were chosen based on empirical observations and experimentation to achieve a balance between accuracy and computational efficiency.
+- **Parameter Selection:** The parameters of the StereoSGBM algorithm were chosen based on experimentation to achieve a balance between accuracy and computational efficiency.
 
 ### Cloud Map Limitation
 The disparity map generated from the large input images appears noisy and lacks meaningful depth information due to an insufficient disparity range. You will find that there is additional source file called downsampling.ipynb, which is where I attempted to impliment this solution. The 3D point cloud outputted in this program indicates ongoing challenges in accurately representing the scene's depth structure. I attempted to solve this issue by:
 - **Downsample Input Images:** Reduce image size using cv.resize() with a scaling factor of 0.25.
 - **Adjust Parameters:** Increase disparity range and adjust parameters like block size to accommodate the reduced image size adequately.
 - **Scale Disparity Values:** Multiply disparity values by 1/16 to obtain depth values in pixels.
-- **Reprojection:** Reproject corrected disparity map to 3D space using cv.reprojectImageTo3D() with updated parameters.
+- **Reprojection:** Reproject corrected disparity map to 3D space using cv.reprojectImageTo3D() with updated parameters
+- - **Textureless Regions:** The algorithm may struggle in textureless regions or areas with repetitive patterns, addressing a known limitation of stereo matching algorithms.
+.
 
 ### Features
 - Computes stereo disparity map using the Semi-Global Block Matching (SGBM) algorithm.
@@ -25,14 +27,9 @@ The disparity map generated from the large input images appears noisy and lacks 
 - Visualizes the disparity map and 3D point cloud.
 
 ### Tools Used
-- Python: The project is implemented in Python, a widely used programming language for computer vision tasks.
 - OpenCV: OpenCV is used for image processing, stereo matching, and 3D reconstruction tasks.
 - NumPy: NumPy is used for efficient array operations and manipulation.
 - Matplotlib: Matplotlib is used for visualizing images, disparity maps, and 3D point clouds.
-
-### Limitations Consideration
-- **Hardware Dependency:** The accuracy of the disparity map heavily depends on the quality and calibration of the stereo camera system, highlighting a potential limitation for users with uncalibrated or low-quality cameras.
-- **Textureless Regions:** The algorithm may struggle in textureless regions or areas with repetitive patterns, addressing a known limitation of stereo matching algorithms.
 
 ### Overall Rationale
 The choices made in the project were driven by a balance between accuracy, efficiency, and usability. By leveraging established libraries and algorithms, considering potential limitations, and identifying areas for improvement, the project aims to provide a solid foundation for stereo vision tasks while also paving the way for future enhancements and optimizations.
