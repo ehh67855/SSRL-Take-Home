@@ -5,7 +5,7 @@ This project focuses on stereo vision using computer vision techniques to estima
 **Link to research reflection:** https://docs.google.com/document/d/1IYjSNB6A4fzgUdNGh5LDhGe7NPew67wU5lHWY1YKXEc/edit?usp=sharing
 
 ### Choices made
-- It became very helpful to run the code as a ipynb file, so the project includes both the .py and .ipynb files to use. This might make it easier for you to use the project.
+- It became very helpful to run the code as a ipynb file, so the project includes both the .py and .ipynb files to use. While it was specified that the project should be in python, it might be easier for you to run it as an IPythonNoteBook project. 
 - Initially, the project had the user input the file paths of the two images and the calib.txt files they wanted to use for the program. However this became very tedious for the user. Given the small scale of the source code, it seemed easier for the user to enter this information into the program. So to test the project on additional datasets, you should edit the file path and calibration information within the source code.
 - The project was tested using datasets from https://vision.middlebury.edu/stereo/data/scenes2014/. The datasets were ommited from the git repository, however one that can be used for testing was left in the project's directory.
 - The project assumes that the images are rectified as this was the case for the datasets given at https://vision.middlebury.edu/stereo/data/scenes2014/
