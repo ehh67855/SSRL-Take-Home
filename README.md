@@ -33,13 +33,13 @@ The disparity map generated from the large input images appears noisy and lacks 
 - Matplotlib: Matplotlib is used for visualizing images, disparity maps, and 3D point clouds.
 
 ## Limitations Consideration
-**Hardware Dependency:** The accuracy of the disparity map heavily depends on the quality and calibration of the stereo camera system, highlighting a potential limitation for users with uncalibrated or low-quality cameras.
-**Textureless Regions:** The algorithm may struggle in textureless regions or areas with repetitive patterns, addressing a known limitation of stereo matching algorithms.
+- **Hardware Dependency:** The accuracy of the disparity map heavily depends on the quality and calibration of the stereo camera system, highlighting a potential limitation for users with uncalibrated or low-quality cameras.
+- **Textureless Regions:** The algorithm may struggle in textureless regions or areas with repetitive patterns, addressing a known limitation of stereo matching algorithms.
 
 ## Potential Improvements
-**Parameter Optimization:** The README suggests implementing automated methods for parameter selection and optimization to enhance the accuracy and robustness of the stereo matching algorithm, addressing a potential area for improvement in the current implementation.
-**Error Handling:** Adding robust error handling mechanisms is proposed to handle exceptions gracefully, enhancing the stability and usability of the application.
-**Performance Optimization:** Optimizing the code for better performance, especially for large-scale image datasets, is recommended to improve the efficiency of the application, addressing scalability concerns.
+- **Parameter Optimization:** The README suggests implementing automated methods for parameter selection and optimization to enhance the accuracy and robustness of the stereo matching algorithm, addressing a potential area for improvement in the current implementation.
+- **Error Handling:** Adding robust error handling mechanisms is proposed to handle exceptions gracefully, enhancing the stability and usability of the application.
+- **Performance Optimization:** Optimizing the code for better performance, especially for large-scale image datasets, is recommended to improve the efficiency of the application, addressing scalability concerns.
 
 Overall Rationale
 The choices made in the project were driven by a balance between accuracy, efficiency, and usability. By leveraging established libraries and algorithms, considering potential limitations, and identifying areas for improvement, the project aims to provide a solid foundation for stereo vision tasks while also paving the way for future enhancements and optimizations.
