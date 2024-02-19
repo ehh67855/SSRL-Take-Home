@@ -1,6 +1,8 @@
-# Stereo Vision Project README
+# Stereo Vision - SSRL
 ## Overview
 This project focuses on stereo vision using computer vision techniques to estimate depth information from a pair of rectified stereo images. It utilizes the OpenCV library for image processing and disparity map generation. The generated disparity map is used to reconstruct a 3D point cloud of the scene.
+
+**Link to research reflection:** https://docs.google.com/document/d/1IYjSNB6A4fzgUdNGh5LDhGe7NPew67wU5lHWY1YKXEc/edit?usp=sharing
 
 ## Choices made
 - It became very helpful to run the code as a ipynb file, so the project includes both the .py and .ipynb files to use. This might make it easier for you to use the project.
@@ -12,14 +14,10 @@ This project focuses on stereo vision using computer vision techniques to estima
 
 ### Cloud Map Limitation
 The disparity map generated from the large input images appears noisy and lacks meaningful depth information due to an insufficient disparity range. You will find that there is additional source file called downsampling.ipynb, which is where I attempted to impliment this solution. The 3D point cloud outputted in this program indicates ongoing challenges in accurately representing the scene's depth structure. I attempted to solve this issue by:
-- **Downsample Input Images:** Reduce image size using cv.pyrDown() or cv.resize() with a scaling factor of 0.25.
+- **Downsample Input Images:** Reduce image size using cv.resize() with a scaling factor of 0.25.
 - **Adjust Parameters:** Increase disparity range and adjust parameters like block size to accommodate the reduced image size adequately.
 - **Scale Disparity Values:** Multiply disparity values by 1/16 to obtain depth values in pixels.
 - **Reprojection:** Reproject corrected disparity map to 3D space using cv.reprojectImageTo3D() with updated parameters.
-
-
-
-
 
 ## Features
 - Computes stereo disparity map using the Semi-Global Block Matching (SGBM) algorithm.
@@ -36,12 +34,7 @@ The disparity map generated from the large input images appears noisy and lacks 
 - **Hardware Dependency:** The accuracy of the disparity map heavily depends on the quality and calibration of the stereo camera system, highlighting a potential limitation for users with uncalibrated or low-quality cameras.
 - **Textureless Regions:** The algorithm may struggle in textureless regions or areas with repetitive patterns, addressing a known limitation of stereo matching algorithms.
 
-## Potential Improvements
-- **Parameter Optimization:** The README suggests implementing automated methods for parameter selection and optimization to enhance the accuracy and robustness of the stereo matching algorithm, addressing a potential area for improvement in the current implementation.
-- **Error Handling:** Adding robust error handling mechanisms is proposed to handle exceptions gracefully, enhancing the stability and usability of the application.
-- **Performance Optimization:** Optimizing the code for better performance, especially for large-scale image datasets, is recommended to improve the efficiency of the application, addressing scalability concerns.
-
-Overall Rationale
+### Overall Rationale
 The choices made in the project were driven by a balance between accuracy, efficiency, and usability. By leveraging established libraries and algorithms, considering potential limitations, and identifying areas for improvement, the project aims to provide a solid foundation for stereo vision tasks while also paving the way for future enhancements and optimizations.
 
 
