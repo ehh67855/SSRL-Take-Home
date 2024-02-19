@@ -6,7 +6,7 @@ This project focuses on stereo vision using computer vision techniques to estima
 
 ### Choices made
 - It became very helpful to run the code as a ipynb file, so the project includes both the .py and .ipynb files to use. This might make it easier for you to use the project.
-- Initially, the project had the user input the file paths of the two images and the calib.txt files they wanted to use for the program. However this because very tedious. Given the small scale of the source code, it seemed easier for the user to hardcode this information into the program. So to test the project on additional datasets, you should edit the file path and calibration information within the source code.
+- Initially, the project had the user input the file paths of the two images and the calib.txt files they wanted to use for the program. However this became very tedious for the user. Given the small scale of the source code, it seemed easier for the user to enter this information into the program. So to test the project on additional datasets, you should edit the file path and calibration information within the source code.
 - The project was tested using datasets from https://vision.middlebury.edu/stereo/data/scenes2014/. The datasets were ommited from the git repository, however one that can be used for testing was left in the project's directory.
 - The project assumes that the images are rectified as this was the case for the datasets given at https://vision.middlebury.edu/stereo/data/scenes2014/
 - **StereoSGBM Algorithm:** The StereoSGBM algorithm was chosen for stereo matching due to its robustness and efficiency in handling various types of stereo images, including those with textureless regions or occlusions.
